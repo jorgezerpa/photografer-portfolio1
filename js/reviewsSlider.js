@@ -1,6 +1,7 @@
 let slider = document.getElementById("review__slider_container");
 let slider_btn = document.getElementById("review__slider_read");
 let slider_run = true; //stop/run slider
+let slider_elements;
 
 class client_review{
     constructor(name, img, review, key){
@@ -24,7 +25,7 @@ const reviews = [
 
 
             //create a element for each review
-reviews.forEach(review=>{
+reviews.forEach((review, i)=>{
     slider.innerHTML += `   
     <div class="review__slider_item">
         <img src="${review.img}">
@@ -32,13 +33,23 @@ reviews.forEach(review=>{
         <h3>${review.name}</h3>
     </div>
     `;
+    if(i===reviews.length-1) slider_elements = document.querySelectorAll(".review__slider_item");
 })
 
             // set listenners
-slider_btn.addEventListener("click", ()=>{
+slider_btn.addEventListener("click", sliderToggler);
+
+slider_elements.forEach(element=>{
+    element.addEventListener("mouseover", sliderToggler)
+    element.addEventListener("mouseleave", sliderToggler)
+})
+
+
+function sliderToggler(){
     slider.style.animationPlayState = slider_run ? "paused" : "running";
     slider_run = !slider_run;
-});
+}
+
 
 // ANIMATION IS CONTROLLED IN MOST PART BY CSS, this just stop it or run it
 

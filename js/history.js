@@ -13,12 +13,12 @@ class HistoryComponent{
 
             //fake data
 const history_components = [
-    new HistoryComponent( 'slider1.jpg', '', 1),
-    new HistoryComponent( 'slider2.jpg', '', 2),
-    new HistoryComponent( 'slider3.jpg', '', 3),
-    new HistoryComponent( 'slider4.jpg','', '', 4),
-    new HistoryComponent( 'slider5.jpg', '', 5),
-    new HistoryComponent( 'slider6.jpg', '', 6),
+    new HistoryComponent( 'timeline.jpg', '', 1),
+    new HistoryComponent( 'timeline1.jpg', '', 1),
+    new HistoryComponent( 'timeline2.jpg', '', 2),
+    new HistoryComponent( 'timeline3.jpg', '', 3),
+    new HistoryComponent( 'timeline4.jpg','', '', 4),
+    new HistoryComponent( 'timeline5.jpg', '', 5),
 ]
 
 
