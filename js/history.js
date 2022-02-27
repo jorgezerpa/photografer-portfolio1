@@ -20,34 +20,38 @@ const history_components = [
 ]
 
 
-for (let i = 0; i < history_components.length ; i++) {
-                
-    let pointer_direction = i%2 === 0 ?"left" : "right";
+let block_a = ( component)=>(
+    `
+    <div class="history__section">
+    <div class="history__line"><div class="pointer left"></div></div>
+    <div class="history__element">
+    <img class ="history__image" src="${component.img}">
+    </div>
+    <div class="history__element">
+        <div class="history__text"><p>${ component.text}</p></div>
+    </div>
+    </div>
+`          
+)
 
-    
-    history__container.innerHTML +=
-        i%2===0 ?   //alternate pointer direction and change change elemens position(l<-->t)
-            `
-            <div class="history__section">
-            <div class="history__line"><div class="pointer ${pointer_direction}"></div></div>
-            <div class="history__element">
-            <img class ="history__image" src="${history_components[i].img}">
-            </div>
-            <div class="history__element">
-                <div class="history__text"><p>${history_components[i].text}</p></div>
-            </div>
-            </div>
-        `          
-        :
-        `
-        <div class="history__section">
-            <div class="history__element">
-                <div class="history__text"><p>${history_components[i].text}</p></div>
-            </div>
-            <div class="history__line"><div class="pointer ${pointer_direction}"></div></div>
-            <div class="history__element">
-                <img class ="history__image" src="${history_components[i].img}">
-            </div>
+let block_b = ( component)=>(
+    `
+    <div class="history__section">
+        <div class="history__element">
+            <div class="history__text"><p>${component.text}</p></div>
         </div>
-    `          
-}
+        <div class="history__line"><div class="pointer right"></div></div>
+        <div class="history__element">
+            <img class ="history__image" src="${component.img}">
+        </div>
+    </div>
+`                     
+)
+
+history_components.forEach((component, i)=>{
+    let is_par = i%2 === 0;
+    history__container.innerHTML += is_par ? block_a(component) : block_b(component)
+})
+
+
+
