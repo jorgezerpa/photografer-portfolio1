@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>photographer Portfolio 2</title>
+</head>
+<body onload="changeHeroVideo()">
+
+    <header>
+                <!-- background Video -->
+        <div class="hero">
+            <div class="hero__video_container">
+                <video id="hero_video" class="hero__video"  loop muted src="./assets/videos/hero__video-mobile.mp4"></video>
+            </div>
+            <div class="hero__video_layer"></div>
+            
+                <!-- hero content -->
+            <div class="hero__content_container">
+                <div class="hero__logo"><h1>LOGO</h1></div>
+                <div class="hero__form">
+                    <h3>Book Your Site</h3>
+                    <form>
+                        <div>
+                            <label for="name">Name</label>
+                            <input id="name" type="text">
+                        </div>
+                        <div>
+                            <label for="name">Email</label>
+                            <input id="name" type="email">
+                        </div>
+                        <div>
+                            <input id="name" type="submit" value="Enviar">
+                        </div>
+                    </form>
+                </div>
+                <div class="hero__review">
+                    <div>
+                        <p><i>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita cupiditate nihil adipisci eveniet officiis. Eveniet in vero obcaecati quasi veritatis qui! Eius, blanditiis. Nesciunt, ab enim quia repellendus dignissimos pariatur.</i></p>
+                        <p><br> Martín Laporta, fashion designer</p>
+                    </div>
+                </div>
+            </div>
+    </header>
+
+
+    <section class="section review__slider">
+       <h2>Some of our clients</h2>
+        <div id="review__slider_container" class="review__slider_container">
+            <div id="slide_left_btn" class="review__slider_slide-left"></div>
+            <div id="slide_right_btn" class="review__slider_slide-right"></div>
+            <!-- here a slider -->
+        </div>
+    </section>
+
+
+    <section class="section history">
+        <h2>My Little History</h2>
+        <div id="history__container" class="history__container">
+
+        </div>
+    </section>
+    
+    <footer>
+        footer
+    </footer>
+    
+    <script src="./js/index.js"></script>
+    <script src="./js/hero.js"></script>
+    <script src="./js/reviewsSlider.js"></script>
+    <script src="./js/history.js"></script>
+    
+</body>
+</html>
