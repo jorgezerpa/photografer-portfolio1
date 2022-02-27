@@ -9,8 +9,7 @@ class HistoryComponent{
     }
 }
 
-// import 
-
+            //fake data
 const history_components = [
     new HistoryComponent( 'slider1.jpg', '', 1),
     new HistoryComponent( 'slider2.jpg', '', 2),
@@ -22,13 +21,15 @@ const history_components = [
 
 
 for (let i = 0; i < history_components.length ; i++) {
-    let direction = i%2 === 0 ?"left" : "right";
+                
+    let pointer_direction = i%2 === 0 ?"left" : "right";
+
     
     history__container.innerHTML +=
-        i%2===0 ?     
+        i%2===0 ?   //alternate pointer direction and change change elemens position(l<-->t)
             `
             <div class="history__section">
-            <div class="history__line"><div class="pointer ${direction}"></div></div>
+            <div class="history__line"><div class="pointer ${pointer_direction}"></div></div>
             <div class="history__element">
             <img class ="history__image" src="${history_components[i].img}">
             </div>
@@ -43,7 +44,7 @@ for (let i = 0; i < history_components.length ; i++) {
             <div class="history__element">
                 <div class="history__text"><p>${history_components[i].text}</p></div>
             </div>
-            <div class="history__line"><div class="pointer ${direction}"></div></div>
+            <div class="history__line"><div class="pointer ${pointer_direction}"></div></div>
             <div class="history__element">
                 <img class ="history__image" src="${history_components[i].img}">
             </div>

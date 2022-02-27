@@ -91,7 +91,7 @@ header{
     background: linear-gradient(to right, rgba(255,255,255,.01), rgba(255,255,255,.01));
     opacity: 0;
     animation: fade-in 1s linear forwards;
-    animation-delay: 2.5s;
+    animation-delay: 3s;
 }
 
 .hero__content_container{
@@ -104,7 +104,7 @@ header{
     grid-template-rows: 75% 1fr;
     opacity: 0;
     animation: fade-in 1s linear forwards;
-    animation-delay: 3s;
+    animation-delay: 6s;
 }
 .hero__content_container>div{
     display: flex;
@@ -170,18 +170,14 @@ header{
     padding: 50px;
     width: 100%;
     position: relative;
+    overflow-x: hidden;
 }
-
-
-
-
 /* slider */
 .review__slider{
     background-color: var(--hero-primary) ;
 }
 .review__slider_container{
     position: relative;
-    overflow: hidden;
     width: 100%;
     padding: 50px;
     display: flex;
@@ -189,24 +185,18 @@ header{
     align-items: center;
     gap: 75px;
     flex-shrink: 1;
+    animation: slide 40s linear infinite;
 }
-.review__slider_slide-left{
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 20px;
-    background-color: #fff;
-    z-index: 2000;
+.review__slider_read-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
-.review__slider_slide-right{
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 20px;
-    background-color: #fff;
-    z-index: 2000;
+.review__slider_read{
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, .8);
+    border-radius: 50%;
 }
 .review__slider_item{
     flex-shrink: 0;
@@ -219,9 +209,11 @@ header{
 }
 
 
-.slide{
-    transition: 2s all;
+@keyframes slide{
+    0%{transform: translate(0);}
+    100%{transform: translateX(calc(-250px * 6));}
 }
+
 
 
 
