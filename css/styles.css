@@ -222,12 +222,13 @@ header{
     position: relative;
 }
 .history__section{
+    /* margin: 50px; */
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 300px;
-    height: 450px;
+    gap: 200px; /*this could be*/
+    min-height: 450px;  /*this could be*/
 }
 .history__line{
     position: absolute;
@@ -264,8 +265,9 @@ header{
     transform: translateX(0);
 }
 
+        /* history section has 2 elements + line */
 .history__element{
-    flex: 1;    
+    flex: 1;
     z-index: 1000; /*put over the pointer*/
     opacity: 0;
 }
@@ -276,12 +278,14 @@ header{
     animation: history-intersected2 1s linear forwards;
 }
 
-
 .history__section img{
     height: 400px;
 }
 .history__text{
-    width: 50%;
+    width: 100%;
+}
+.history__text p{
+    width: 100%;
 }
 
 
@@ -403,41 +407,13 @@ header{
 
 
 @media screen and (max-width:900px) {
-    .hero__form form, .hero__form h3{
-        width: 100%;
-    }
-    .history__section{
-        gap: 100px;
-    }
-    .history__element{
-        width: 90vw;
-    }
-    
-}
-@media screen and (max-width:700px) {
     .history__section{
         gap: 50px;
-        flex-direction: column;
-        margin: 250px;
-    }
-    .history__section div{
-        width: 90vw;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .history__line{
-        visibility: hidden;
-    }
-    .history__text {
-        position: relative;
-        background: rgba(0, 0, 0, .4);
-        width: 70vw;
     }
 }
-    @media screen and (max-width:800px) {
-        .last__image_container img{
-            display: none;
+@media screen and (max-width:800px) {
+    .last__image_container img{
+        display: none;
         }
         .last__image_container{
             background-image: url(../assets/images/last.jpg);
@@ -449,11 +425,22 @@ header{
             flex-direction: column;
             justify-content: center;
         }
-
+        
     }
-    
+    @media screen and (max-width:700px) {
+            .history__section{
+                flex-direction: column;
+                margin-bottom: 50px;
+            }
+            .history__line .pointer{
+                display: none;
+            }
+            .history__text{
+                background: rgba(13, 38, 63,1);
+            }
+    }
 
-@media screen and (max-width:620px) {
+    @media screen and (max-width:620px) {
     .hero__review,.hero__review p{
         display: none;
     }
@@ -468,6 +455,11 @@ header{
 @media screen and (max-width:400px) {
     .review__slider_item{
         width: 90vw;
+    }
+    .history h2{
+        padding-bottom: 30px;
+        background-color: rgba(13, 38, 63,1);
+        z-index: 500;
     }
 }
 
