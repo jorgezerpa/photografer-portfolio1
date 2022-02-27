@@ -104,7 +104,7 @@ header{
     grid-template-rows: 75% 1fr;
     opacity: 0;
     animation: fade-in 1s linear forwards;
-    animation-delay: 6s;
+    animation-delay: 3s;
 }
 .hero__content_container>div{
     display: flex;
@@ -154,14 +154,6 @@ header{
     text-align: right;
 }
 
-@keyframes fade-in{
-    0%{ opacity: 0; }
-    100%{ opacity: 1; }
-}
-
-
-
-
 /* 
 -----------------------------------------
             SECTIONS
@@ -207,7 +199,6 @@ header{
 .review__slider_item img{
     width: 100%;
 }
-
 
 @keyframes slide{
     0%{transform: translate(0);}
@@ -267,13 +258,131 @@ header{
 .history__element{
     flex: 1;    
     z-index: 1000; /*put over the pointer*/
+    opacity: 0;
 }
+.history__element_isIntersecting1{
+    animation: history-intersected1 1s linear forwards;
+}
+.history__element_isIntersecting2{
+    animation: history-intersected2 1s linear forwards;
+}
+
+
 .history__section img{
     height: 400px;
 }
 
 
+    /* animations */
+@keyframes history-intersected1{
+    0%{ 
+        opacity: 0; 
+        transform: translateX(-100px) translateY(100px);
+    }
+    100%{ 
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+     }
+}
+@keyframes history-intersected2{
+    0%{ 
+        opacity: 0; 
+        transform: translateX(100px) translateY(100px);
+    }
+    100%{ 
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+     }
+}
 
+
+
+/* last section */
+.last{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.last__container{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.last__image_container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.last__image_container img{
+    position: absolute;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.last__content_container{
+    position: relative;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 75% 1fr;
+}
+.last__content_container>div:nth-child(1){
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+}
+.last__content_container>div:nth-child(2){
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.last__text{
+    
+}
+.last__form {
+    
+}
+.last__form h3{
+    color:var(--hero-primary);
+    width: 50%;
+    max-width: 300px;
+    padding: 5px;
+    background: #fff;
+}
+.last__form form{
+    background: var(--hero-primary);
+    padding: 20px 20px 60px 20px;
+    width: 50%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;   
+}
+.last__form form input{
+    width: 100%;
+}
+
+
+
+
+            /* global animations */
+@keyframes fade-in{
+    0%{ opacity: 0; }
+    100%{ opacity: 1; }
+}
 
 
 
